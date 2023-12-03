@@ -12,7 +12,6 @@ class CreatorsPage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              background: Colors.red;
               width: 350,
               height: 35,
               // color: Colors.grey,
