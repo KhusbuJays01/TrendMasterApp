@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:trendmaster/pages/home_page.dart';
 import 'package:trendmaster/pages/influencer_profile_page.dart';
+import 'package:trendmaster/pages/creators_page.dart';
 
 void main(){
   runApp(MyApp());
@@ -25,7 +26,7 @@ class MyApp  extends StatelessWidget {
           // "/": (context) => LoginPage(),
           // "/": (context) => HomePage(),
           // "/": (context) => CreatorPage(),
-          "/": (context) => InfluencerProfile(),
+          "/": (context) => CreatorsPage(),
         }
     );
   }
