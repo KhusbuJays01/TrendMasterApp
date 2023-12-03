@@ -5,9 +5,8 @@ class InfluencerProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Influencer Profile"),
+        title: Text("Influencer Profile", style: TextStyle(color: Colors.white),),
         centerTitle: true,
-        backgroundColor: Colors.blue,
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),

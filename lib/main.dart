@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:trendmaster/pages/company_home_page.dart';
-import 'package:trendmaster/pages/home_page.dart';
+import 'package:trendmaster/pages/backup_creators_pg.dart';
+import 'package:trendmaster/pages/creators_page.dart';
+import 'package:trendmaster/pages/influencer_home_page.dart';
 import 'package:trendmaster/pages/influencer_profile_page.dart';
+import 'package:trendmaster/pages/login_page.dart';
 
 void main(){
   runApp(MyApp());
@@ -16,7 +19,11 @@ class MyApp  extends StatelessWidget {
     return MaterialApp(
         themeMode: ThemeMode.light,
         theme: ThemeData(
-          primarySwatch: Colors.teal,
+          appBarTheme: AppBarTheme(
+            color: Colors.teal,
+
+
+          ),
           fontFamily: GoogleFonts.aBeeZee().fontFamily,
         ),
 
@@ -26,8 +33,8 @@ class MyApp  extends StatelessWidget {
           // "/": (context) => LoginPage(),
           // "/": (context) => HomePage(),
           // "/": (context) => CreatorPage(),
-          // "/": (context) => InfluencerProfile(),
-             "/": (context) => CompanyHomePage(),
+          "/": (context) => InfluencerProfile(),
+          //    "/": (context) => LoginPage(),
 
         }
     );
