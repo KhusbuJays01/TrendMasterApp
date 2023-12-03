@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:trendmaster/pages/company_home_page.dart';
 import 'package:trendmaster/pages/home_page.dart';
 import 'package:trendmaster/pages/influencer_profile_page.dart';
 
@@ -25,7 +26,9 @@ class MyApp  extends StatelessWidget {
           // "/": (context) => LoginPage(),
           // "/": (context) => HomePage(),
           // "/": (context) => CreatorPage(),
-          "/": (context) => InfluencerProfile(),
+          // "/": (context) => InfluencerProfile(),
+             "/": (context) => CompanyHomePage(),
+
         }
     );
   }

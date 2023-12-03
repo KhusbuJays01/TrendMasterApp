@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class InfluencerProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -39,7 +38,7 @@ class InfluencerProfile extends StatelessWidget {
             Center(
               child: Container(
                 width: 350,
-                height: 300,
+                height: 280,
                 padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   color: Colors.grey.shade200,
@@ -119,8 +118,36 @@ class InfluencerProfile extends StatelessWidget {
                 ),
               ),
             ),
-            
-            // Single row with "Area of Expertise" text and three containers
+            SizedBox(height: 10),
+
+            // Worked with Companies text aligned to the right and bold
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  'Worked with Companies',
+                  style: TextStyle(
+                    fontSize: 19,
+                    fontWeight: FontWeight.bold, // Make it bold
+                    color: Colors.black87,
+                  ),
+                ),
+              ],
+            ),
+
+            SizedBox(height: 10),
+
+            // Gallery text
+            Text(
+              'Gallery',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.black87,
+              ),
+            ),
+
+            // Row with three images on the right side
           ],
         ),
       ),
