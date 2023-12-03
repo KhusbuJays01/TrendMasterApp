@@ -1,10 +1,38 @@
 import 'package:flutter/material.dart';
 
+class SmallContainer extends StatelessWidget {
+  final String text;
+
+  const SmallContainer({required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 100,
+      height: 40,
+      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Colors.blue,
+      ),
+      child: Center(
+        child: Text(
+          text,
+          style: TextStyle(
+            fontSize: 14,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class CompanyHomePage extends StatelessWidget {
   final List<String> images = [
     'assets/images/company_h1.png',
-    'assets/images/cocacola.png',
-    'assets/images/sumsung.png',
+    'assets/images/company_h1.png',
+    'assets/images/company_h1.png',
     // Add more images as needed
   ];
 
@@ -14,20 +42,31 @@ class CompanyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Khusbu Jaiswal"),
         centerTitle: true,
-        backgroundColor: Colors.blue, // Set your desired background color here
+        backgroundColor: Colors.blue,
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 20, top: 15, right: 20),
+        padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Profile section
+            Container(
+              width: 150,
+              height: 20,
+              child: TextField(
+                style: TextStyle(color: Colors.white),
+                decoration: InputDecoration.collapsed(
+                  hintText: "Search a Creator",
+                  hintStyle: TextStyle(color: Colors.grey),
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
             Row(
               children: [
                 CircleAvatar(
                   radius: 30,
-                  backgroundImage: AssetImage('assets/images/companyProfile.png'), // Add your profile picture asset
+                  backgroundImage: AssetImage('assets/images/companyProfile.png'),
                 ),
                 SizedBox(width: 10),
                 Column(
@@ -44,11 +83,11 @@ class CompanyHomePage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20),
-            // Image carousel
+            SizedBox(height: 0),
             Container(
-              height: 350,
-              width: 400,
+              color: Colors.red,
+              height: 250,
+              width: 450,
               child: PageView.builder(
                 itemCount: images.length,
                 itemBuilder: (context, index) {
@@ -56,25 +95,45 @@ class CompanyHomePage extends StatelessWidget {
                 },
               ),
             ),
+            SizedBox(height: 8),
+            Text(
+              'Categories', // Add the location here
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.black87,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 20),
+            Container(
+              height: 60,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  SmallContainer(text: 'Motivation'),
+                  SizedBox(width: 20),
+                  SmallContainer(text: 'Lifestyle'),
+                  SizedBox(width: 20),
+                  SmallContainer(text: 'Education'),
+                  SizedBox(width: 20),
+                  SmallContainer(text: 'Fashion'),
 
-            SizedBox(height: 5),
-            Padding(
-              padding: const EdgeInsets.only(left: 25),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Categories',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                ),
+                ],
               ),
             ),
 
+            SizedBox(height: 10),
+            Text(
+              'Creators', // Add the location here
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.black87,
+              ),
+              textAlign: TextAlign.center,
+            ),
 
-            // Add other content below the image carousel if needed
           ],
         ),
       ),
