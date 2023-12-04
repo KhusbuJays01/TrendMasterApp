@@ -32,10 +32,11 @@ class MyApp  extends StatelessWidget {
         routes: {
           // "/": (context) => LoginPage(),
           // "/": (context) => HomePage(),
-          // "/": (context) => CreatorPage(),
-          "/": (context) => InfluencerProfile(),
-          //    "/": (context) => LoginPage(),
+          // "/": (context) => CreatorsPage(),
+          "/": (context) => CompanyHomePage(),
 
+          // "/": (context) => InfluencerProfile(),
+          //    "/": (context) => LoginPage(),
         }
     );
   }

@@ -39,71 +39,103 @@ class CompanyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      //App Bar Start
       appBar: AppBar(
         title: Text("Khusbu Jaiswal"),
         centerTitle: true,
-        backgroundColor: Colors.blue,
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+
+
+            //Search Bar Start
             Container(
-              width: 150,
-              height: 20,
-              child: TextField(
-                style: TextStyle(color: Colors.white),
-                decoration: InputDecoration.collapsed(
-                  hintText: "Search a Creator",
-                  hintStyle: TextStyle(color: Colors.grey),
-                ),
+
+              height: 35,
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Color(0xFFC2BDBD),),
+
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: TextField(
+                      style: TextStyle(color: Colors.black),
+                      decoration: InputDecoration.collapsed(
+                        hintText: "Search a Creator",
+                        hintStyle: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             SizedBox(height: 10),
-            Row(
-              children: [
-                CircleAvatar(
-                  radius: 30,
-                  backgroundImage: AssetImage('assets/images/companyProfile.png'),
-                ),
-                SizedBox(width: 10),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Khusbu Jaiswal',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            SizedBox(height: 0),
+
+            // Profile Section
             Container(
+              color: Colors.orange,
+              child: Row(
+                children: [
+                  CircleAvatar(
+                    radius: 30,
+                    backgroundImage: AssetImage('assets/images/companyProfile.png'),
+                  ),
+                  SizedBox(width: 10),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Khusbu Jaiswal',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 10),
+
+
+            Container(
+
               color: Colors.red,
-              height: 250,
-              width: 450,
+              height: 180,
+
+              // width: 450,
               child: PageView.builder(
                 itemCount: images.length,
                 itemBuilder: (context, index) {
-                  return Image.asset(images[index]);
+                  return Image.asset(images[index], fit: BoxFit.cover,
+                  );
                 },
               ),
             ),
             SizedBox(height: 8),
-            Text(
-              'Categories', // Add the location here
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.black87,
-              ),
-              textAlign: TextAlign.center,
+
+            //Category Section
+            Column(
+              // mainAxisAlignment: MainAxisAlignment.start,
+              // crossAxisAlignment: CrossAxisAlignment.start,
+
+              children: [
+                Text(
+                  'Categories', // Add the location here
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87,
+                  ),
+                  // textAlign: TextAlign.start,
+                ),
+              ],
             ),
             SizedBox(height: 20),
             Container(
