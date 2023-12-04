@@ -21,8 +21,6 @@ class MyApp  extends StatelessWidget {
         theme: ThemeData(
           appBarTheme: AppBarTheme(
             color: Colors.teal,
-
-
           ),
           fontFamily: GoogleFonts.aBeeZee().fontFamily,
         ),
@@ -33,7 +31,7 @@ class MyApp  extends StatelessWidget {
           // "/": (context) => LoginPage(),
           // "/": (context) => HomePage(),
           // "/": (context) => CreatorPage(),
-          "/": (context) => InfluencerProfile(),
+          "/": (context) => CompanyHomePage(),
           //    "/": (context) => LoginPage(),
 
         }
