@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class InfluencerHomePage extends StatelessWidget {
   final List<String> images = [
     'assets/images/home.png',
     'assets/images/cocacola.png',

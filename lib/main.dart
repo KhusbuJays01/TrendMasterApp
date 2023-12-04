@@ -24,13 +24,13 @@ class MyApp  extends StatelessWidget {
         theme: ThemeData(
           appBarTheme: AppBarTheme(
             color: Colors.teal,
-              titleTextStyle: TextStyle(fontSize: 22, color: Colors.white), ),
+              titleTextStyle: TextStyle(fontSize: 22, color: Colors.white,)),
           fontFamily: GoogleFonts.aBeeZee().fontFamily,
         ),
 
         //Route
         routes: {
-          "/": (context) => CompanyHomePage(),
+          "/": (context) => InfluencerProfile(),
         }
     );
   }
