@@ -159,16 +159,142 @@ class InfluencerProfile extends StatelessWidget {
               SizedBox(height: 10),
 
               //Social Media Details Section
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image.asset('assets/images/profile.png'),
-                  Image.asset('assets/images/profile.png'),
-                  Image.asset('assets/images/profile.png'),
-                ],
+              Container(
+                color: Colors.grey.shade200,
 
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Image.asset('assets/images/profile.png',height: 80, width: 80),
+                          Image.asset('assets/images/profile.png',height: 80, width: 80),
+                          Image.asset('assets/images/profile.png',height: 80, width: 80),
+                        ],
+
+                      ),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text("80k", style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+                          Text("50k", style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+                          Text("40k", style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 10,),
+
+              // Worked With Companies
+              Container(
+                color: Colors.grey.shade200,
+                child: Column(
+                  children: [
+                    Text("Worked with Companies",
+                      style:TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black87,),),
+
+                    SizedBox(height: 10,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Image.asset('assets/images/profile.png',height: 80, width: 80),
+                        Image.asset('assets/images/profile.png',height: 80, width: 80),
+                        Image.asset('assets/images/profile.png',height: 80, width: 80),
+                        Image.asset('assets/images/profile.png',height: 80, width: 80),
+                      ],
+                    ),
+                    SizedBox(height: 10,),
+
+                    Container(
+
+                      height: 26,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.teal,
+
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Text("ADD MORE", textAlign: TextAlign.center, style: TextStyle(fontSize: 13, color: Colors.white, )),
+                      ),
+                    ),
+                    SizedBox(height: 10,),
+                  ],
+                ),
 
               ),
+              SizedBox(height: 10,),
+
+
+              //Gallery
+              Container(
+                color: Colors.grey.shade200,
+                child: Column(
+                  children: [
+                    Text("Gallery",
+                      style:TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black87,),),
+
+                    SizedBox(height: 10,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Image.asset('assets/images/profile.png',height: 80, width: 80),
+                        Image.asset('assets/images/profile.png',height: 80, width: 80),
+                        Image.asset('assets/images/profile.png',height: 80, width: 80),
+                      ],
+                    ),
+                    SizedBox(height: 10,),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Image.asset('assets/images/profile.png',height: 80, width: 80),
+                        Image.asset('assets/images/profile.png',height: 80, width: 80),
+                        Image.asset('assets/images/profile.png',height: 80, width: 80),
+                      ],
+                    ),
+                    SizedBox(height: 10,),
+
+                    Container(
+
+                      height: 26,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.teal,
+
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Text("ADD MORE", textAlign: TextAlign.center, style: TextStyle(fontSize: 13, color: Colors.white, )),
+                      ),
+                    ),
+                    SizedBox(height: 10,),
+                  ],
+                ),
+
+              )
+
+
+
 
 
 
