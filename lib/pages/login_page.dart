@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'creators_page.dart';
 
-
-
 class LoginPage extends StatelessWidget {
   void onPressed(BuildContext context) {
     // Navigate to the HomePage
@@ -39,6 +37,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
+
                   // Password Textfield
                   TextField(
                     obscureText: true,
@@ -55,11 +54,14 @@ class LoginPage extends StatelessWidget {
           SizedBox(height: 20),
 
           // Button Section
+
           // Login Button
           FractionallySizedBox(
             widthFactor: 0.85,
+
             child: ElevatedButton(
               onPressed: () => onPressed(context),
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.teal, foregroundColor: Colors.white),
               child: Text("Login"),
             ),
           ),
@@ -83,6 +85,7 @@ class LoginPage extends StatelessWidget {
                         widthFactor: 0.97,
                         child: ElevatedButton(
                           onPressed: () => onPressed(context),
+                          style: ElevatedButton.styleFrom(backgroundColor: Colors.teal, foregroundColor: Colors.white),
                           child: Text("Sign up with Google"),
                         ),
                       ),
@@ -90,6 +93,7 @@ class LoginPage extends StatelessWidget {
                         widthFactor: 0.97,
                         child: ElevatedButton(
                           onPressed: () => onPressed(context),
+                          style: ElevatedButton.styleFrom(backgroundColor: Colors.teal, foregroundColor: Colors.white),
                           child: Text("Sign up with Facebook"),
                         ),
                       ),
