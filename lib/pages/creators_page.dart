@@ -12,6 +12,8 @@ class CreatorsPage extends StatelessWidget {
       appBar: AppBar(
         title: Center(child: Text("Creators For You", style: TextStyle(color: Colors.white),)),
       ),
+
+
       body: SingleChildScrollView(
         child: Column(
           children: [

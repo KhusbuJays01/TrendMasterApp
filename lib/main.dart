@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:trendmaster/pages/Budget.dart';
 import 'package:trendmaster/pages/company_home_page.dart';
 import 'package:trendmaster/pages/backup_creators_pg.dart';
 import 'package:trendmaster/pages/creators_page.dart';
@@ -17,26 +18,29 @@ class MyApp  extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
+
+        //Theme Style
         themeMode: ThemeMode.light,
         theme: ThemeData(
           appBarTheme: AppBarTheme(
             color: Colors.teal,
-
-
-          ),
+              titleTextStyle: TextStyle(fontSize: 22, color: Colors.white,)),
           fontFamily: GoogleFonts.aBeeZee().fontFamily,
         ),
 
-        debugShowCheckedModeBanner: false,
-
+        //Route
         routes: {
+
           // "/": (context) => LoginPage(),
           // "/": (context) => HomePage(),
           // "/": (context) => CreatorsPage(),
           // "/": (context) => CompanyHomePage(),
-
           // "/": (context) => InfluencerProfile(),
+          // "/": (context) => InfluencerHomePage(),
+          "/": (context) => Budget(),
           //    "/": (context) => LoginPage(),
+
         }
     );
   }
