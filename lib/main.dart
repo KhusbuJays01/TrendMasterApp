@@ -33,7 +33,16 @@ class MyApp  extends StatelessWidget {
 
         //Route
         routes: {
-          "/": (context) => CompanySuccessPage(),
+          // "/": (context) => AddDetailsPage(),
+          // "/": (context) => CompanyHomePage(),
+          // "/": (context) => CompanyLocationPage(),
+          // "/": (context) => CompanySuccessPage(),
+          // "/": (context) => CreatorsPage(),
+          // "/": (context) => InfluencerHomePage(),
+          "/": (context) => InfluencerProfile(),
+
+
+
         }
     );
   }

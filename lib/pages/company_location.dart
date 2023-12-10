@@ -28,7 +28,7 @@ class _CompanyLocationPageState extends State<CompanyLocationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("Creators For You")),
+        title: Center(child: Text("Location")),
       ),
       body: SingleChildScrollView(
         child: Padding(
