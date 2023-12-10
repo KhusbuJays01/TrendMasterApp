@@ -33,7 +33,7 @@ class MyApp  extends StatelessWidget {
           // "/": (context) => LoginPage(),
           // "/": (context) => HomePage(),
           // "/": (context) => CreatorsPage(),
-          "/": (context) => CompanyHomePage(),
+          // "/": (context) => CompanyHomePage(),
 
           // "/": (context) => InfluencerProfile(),
           //    "/": (context) => LoginPage(),
