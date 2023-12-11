@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:trendmaster/pages/Budget.dart';
+import 'package:trendmaster/pages/add_details_page.dart';
 import 'package:trendmaster/pages/company_home_page.dart';
 import 'package:trendmaster/pages/backup_creators_pg.dart';
+import 'package:trendmaster/pages/company_location.dart';
+import 'package:trendmaster/pages/company_susccess_page.dart';
 import 'package:trendmaster/pages/creators_page.dart';
 import 'package:trendmaster/pages/influencer_home_page.dart';
 import 'package:trendmaster/pages/influencer_profile_page.dart';
@@ -32,6 +35,7 @@ class MyApp  extends StatelessWidget {
         //Route
         routes: {
 
+
           // "/": (context) => LoginPage(),
           // "/": (context) => HomePage(),
           // "/": (context) => CreatorsPage(),
@@ -40,6 +44,13 @@ class MyApp  extends StatelessWidget {
           // "/": (context) => InfluencerHomePage(),
           "/": (context) => Budget(),
           //    "/": (context) => LoginPage(),
+          // "/": (context) => AddDetailsPage(),
+          // "/": (context) => CompanyHomePage(),
+          // "/": (context) => CompanyLocationPage(),
+          // "/": (context) => CompanySuccessPage(),
+          // "/": (context) => CreatorsPage(),
+          // "/": (context) => InfluencerHomePage(),
+          // "/": (context) => InfluencerProfile(),
 
         }
     );
