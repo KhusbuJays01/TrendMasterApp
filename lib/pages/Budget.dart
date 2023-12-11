@@ -15,11 +15,13 @@ class Budget extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Center(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 100.0),
+                  padding: const EdgeInsets.symmetric(vertical: 90.0),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'Let\'s start with your budget for this campaign.',
@@ -31,9 +33,9 @@ class Budget extends StatelessWidget {
                         ),
                         textAlign: TextAlign.left,
                       ),
-                      SizedBox(height: 10), // Add spacing between the two Text widgets
+                      SizedBox(height: 10),
                       Padding(
-                        padding: const EdgeInsets.only(right: 60, top: 40), // Add horizontal padding
+                        padding: const EdgeInsets.only(right: 60, top: 40),
                         child: Text(
                           'How many creators do you want?',
                           style: TextStyle(
@@ -45,10 +47,10 @@ class Budget extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0), // Add padding
-                        child: NumberCounter(), // Use the updated NumberCounter widget
+                        padding: const EdgeInsets.all(8.0),
+                        child: NumberCounter(),
                       ),
-                      SizedBox(height: 10), // Add spacing between the NumberCounter and the new text
+                      SizedBox(height: 10),
                       Text(
                         'Your Budget',
                         style: TextStyle(
@@ -56,7 +58,38 @@ class Budget extends StatelessWidget {
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
                         ),
-                        textAlign: TextAlign.left,
+                        textAlign: TextAlign.start,
+                      ),
+                      SizedBox(height: 15),
+                      Text(
+                        'minimum budget is based on the number of creators chosen.',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.black,
+                          fontWeight: FontWeight.normal,
+                        ),
+                        textAlign: TextAlign.start,
+                      ),
+                      SizedBox(height: 50),
+                      Center(
+                        child: Text(
+                          'Just Few Steps Remaining',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Center(
+                        child: ElevatedButton(
+                          onPressed: () {
+                            // Add your button click logic here
+                          },
+                          child: Text('Continue'),
+                        ),
                       ),
                     ],
                   ),
@@ -67,7 +100,6 @@ class Budget extends StatelessWidget {
           ),
         ),
       ),
-      // Bottom Navigation Bar
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -123,10 +155,11 @@ class _NumberCounterState extends State<NumberCounter> {
         color: Colors.grey.shade200,
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               IconButton(
                 icon: Icon(Icons.remove),
