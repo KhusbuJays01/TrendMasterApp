@@ -5,6 +5,12 @@ class Budget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         title: Text(
           "Add Your Budget",
           style: TextStyle(color: Colors.white),
@@ -28,7 +34,6 @@ class Budget extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 20,
                           color: Colors.black87,
-                          backgroundColor: Colors.orange,
                           fontWeight: FontWeight.bold,
                         ),
                         textAlign: TextAlign.left,
@@ -70,12 +75,12 @@ class Budget extends StatelessWidget {
                         ),
                         textAlign: TextAlign.start,
                       ),
-                      SizedBox(height: 50),
+                      SizedBox(height: 120),
                       Center(
                         child: Text(
                           'Just Few Steps Remaining',
                           style: TextStyle(
-                            fontSize: 15,
+                            fontSize: 20,
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                           ),
@@ -84,11 +89,24 @@ class Budget extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       Center(
-                        child: ElevatedButton(
-                          onPressed: () {
-                            // Add your button click logic here
-                          },
-                          child: Text('Continue'),
+                        child: SizedBox(
+                          width: 200, // Set the width of the button
+                          height: 50, // Set the height of the button
+                          child: ElevatedButton(
+                            onPressed: () {
+                              // Add your button click logic here
+                            },
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.teal, // Set the button color to teal
+                            ),
+                            child: Text(
+                              'Continue',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                     ],

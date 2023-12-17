@@ -12,12 +12,27 @@ class CompanySuccessPage extends StatelessWidget {
           Container(
             child: Image.asset(
               'assets/images/logo.png',
-              height: 400,
+              height: 200,
               fit: BoxFit.cover,
             ),
           ),
-          SizedBox(height: 20,),
+          SizedBox(height: 40,),
 
+          Container(
+            width: 130,
+            height: 130,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.teal,
+            ),
+            child: Center(
+              child: Icon(
+                Icons.check,
+                color: Colors.white,
+                size: 80,
+              ),
+            ),
+          ),
           Text(
             'Congratulations', style: TextStyle(fontSize: 38, color: Colors.teal , fontWeight: FontWeight.bold),
           ),

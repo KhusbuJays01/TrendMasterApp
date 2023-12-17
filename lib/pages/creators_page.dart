@@ -10,9 +10,18 @@ class CreatorsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("Creators For You", style: TextStyle(color: Colors.white),)),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: Text(
+          "Creators For You",
+          style: TextStyle(color: Colors.white),
+        ),
+        centerTitle: true, // Center the title
       ),
-
 
       body: SingleChildScrollView(
         child: Column(
@@ -23,16 +32,16 @@ class CreatorsPage extends StatelessWidget {
               color: Color(0xFFD9D9D9),
               child: Row(
                 children: [
-                  Text("hi"),
-                  SizedBox(width: 40),
+                  Icon(Icons.search, color: Colors.grey), // Search Icon
+                  SizedBox(width: 10),
                   Container(
                     width: 150,
                     height: 20,
                     child: TextField(
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.black),
                       decoration: InputDecoration.collapsed(
                         hintText: "Search a Creator",
-                        hintStyle: TextStyle(color: Colors.white),
+                        hintStyle: TextStyle(color: Colors.grey),
                       ),
                     ),
                   ),
@@ -100,18 +109,39 @@ class CreatorsPage extends StatelessWidget {
                     impressions: 'Rs.30,000 for 50.0K impressions',
                   ),
                   SizedBox(height: spacing),
-
-
-                  // Add more CreatorContainers or Dummy Code For Testing as needed
                 ],
               ),
             ),
           ],
         ),
       ),
+
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message, size: 30, color: Colors.grey),
+            label: 'Messages',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home, size: 30, color: Colors.grey),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications, size: 30, color: Colors.grey),
+            label: 'Notifications',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person, size: 30, color: Colors.grey),
+            label: 'Profile',
+          ),
+        ],
+      ),
+
     );
   }
 }
+
+
 
 class CreatorContainer extends StatelessWidget {
   final String imageAsset;
@@ -199,6 +229,8 @@ class CreatorContainer extends StatelessWidget {
                       ),
                     ],
                   ),
+
+
                 )
               ],
             ),
@@ -208,3 +240,4 @@ class CreatorContainer extends StatelessWidget {
     );
   }
 }
+

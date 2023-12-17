@@ -24,14 +24,19 @@ class _AddDetailsPageState extends State<AddDetailsPage> {
     ];
   }
 
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       //app bar
       appBar: AppBar(
-        title: Center(child: Text("Add Details")),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: Text("Add Details"),
+        centerTitle: true, // Center the title
       ),
 
       body: SingleChildScrollView(
@@ -40,7 +45,6 @@ class _AddDetailsPageState extends State<AddDetailsPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
               //Description Section
               Text(
                 'Great! We need a few details about your campaign',
@@ -50,7 +54,8 @@ class _AddDetailsPageState extends State<AddDetailsPage> {
 
               //Cover Photo Section
               Text(
-                'Add a cover photo*', style: TextStyle(fontWeight: FontWeight.bold),
+                'Add a cover photo*',
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 5),
 
@@ -58,13 +63,17 @@ class _AddDetailsPageState extends State<AddDetailsPage> {
               Container(
                 height: 100,
                 width: 100,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.red),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.red,
+                ),
               ),
               SizedBox(height: 10),
 
               //Campaign Title Section
               Text(
-                'Campaign Title*', style: TextStyle(fontWeight: FontWeight.bold),
+                'Campaign Title*',
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 5),
 
@@ -73,8 +82,7 @@ class _AddDetailsPageState extends State<AddDetailsPage> {
                 height: 40,
                 child: TextField(
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                    ),
+                    border: OutlineInputBorder(),
                     contentPadding: EdgeInsets.only(top: 10, bottom: 10, left: 10),
                     isDense: true,
                   ),
@@ -84,7 +92,8 @@ class _AddDetailsPageState extends State<AddDetailsPage> {
 
               //Campaign Description Section
               Text(
-                'Campaign Description*', style: TextStyle(fontWeight: FontWeight.bold),
+                'Campaign Description*',
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 5),
 
@@ -93,7 +102,7 @@ class _AddDetailsPageState extends State<AddDetailsPage> {
                 child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.teal, width: 2, ),
+                      borderSide: BorderSide(color: Colors.teal, width: 2),
                     ),
                     contentPadding: EdgeInsets.only(top: 10, bottom: 10, left: 10),
                     isDense: true,
@@ -102,16 +111,16 @@ class _AddDetailsPageState extends State<AddDetailsPage> {
               ),
               SizedBox(height: 10),
 
-             // Select Niche Section
+              // Select Niche Section
               Text(
-                'Select Niche*', style: TextStyle(fontWeight: FontWeight.bold),
+                'Select Niche*',
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 5),
 
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
-
                 children: [
                   Wrap(
                     spacing: 8,

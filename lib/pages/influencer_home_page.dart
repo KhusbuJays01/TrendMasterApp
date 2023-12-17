@@ -1,19 +1,60 @@
 import 'package:flutter/material.dart';
 
-class InfluencerHomePage extends StatelessWidget {
+class InfluencerHomePage extends StatefulWidget {
+  @override
+  _InfluencerHomePageState createState() => _InfluencerHomePageState();
+}
+
+class _InfluencerHomePageState extends State<InfluencerHomePage> {
+  int currentIndex = 0;
+
   final List<String> images = [
     'assets/images/home.png',
     'assets/images/cocacola.png',
-    'assets/images/sumsung.png',// Add more images as needed
+    'assets/images/sumsung.png', // Add more images as needed
     // Add more image paths as needed
   ];
+
+  final List<String> productNames = [
+    'Johnsons Baby Cream',
+    'Coca-Cola',
+    'Samsung Phone',
+    // Add more product names as needed
+  ];
+
+  final List<String> distributors = [
+    'by Magnum Distributors!',
+    'by Coca-Cola Company',
+    'by Samsung Electronics',
+    // Add more distributor names as needed
+  ];
+
+  final List<String> prices = [
+    'Rs. 700/- Only',
+    'Rs. 2.50/- per can',
+    'Rs. 20,000/- Only',
+    // Add more prices as needed
+  ];
+
+  final List<String> viewDescriptions = [
+    'For 1000 Views',
+    'For 5000 Views',
+    'For 2000 Views',
+    // Add more view descriptions as needed
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         title: Text("For You"),
         centerTitle: true,
-        backgroundColor: Colors.blue, // Set your desired background color here
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 0, top: 15),
@@ -25,6 +66,11 @@ class InfluencerHomePage extends StatelessWidget {
               width: 400,
               child: PageView.builder(
                 itemCount: images.length,
+                onPageChanged: (index) {
+                  setState(() {
+                    currentIndex = index;
+                  });
+                },
                 itemBuilder: (context, index) {
                   return Image.asset(images[index]);
                 },
@@ -36,7 +82,7 @@ class InfluencerHomePage extends StatelessWidget {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Johnsons Baby Cream',
+                  productNames[currentIndex],
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w500,
@@ -51,7 +97,7 @@ class InfluencerHomePage extends StatelessWidget {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'by Magnum Distributors!',
+                  distributors[currentIndex],
                   style: TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.w300,
@@ -66,7 +112,7 @@ class InfluencerHomePage extends StatelessWidget {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Rs. 700/- Only',
+                  prices[currentIndex],
                   style: TextStyle(
                     fontSize: 19,
                     fontWeight: FontWeight.bold,
@@ -81,7 +127,7 @@ class InfluencerHomePage extends StatelessWidget {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'For 1000 Views',
+                  viewDescriptions[currentIndex],
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.black,
@@ -115,7 +161,7 @@ class InfluencerHomePage extends StatelessWidget {
                     height: 45,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Colors.black,
+                      color: Colors.teal, // Set the background color to teal
                     ),
                     child: Center(
                       child: Text(

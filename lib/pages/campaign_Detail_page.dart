@@ -18,11 +18,22 @@ class CampaignDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Campaign Detail",
-          style: TextStyle(color: Colors.white),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
-        centerTitle: true,
+        title: Row(
+          children: [
+            SizedBox(width: 10),
+            Text(
+              "Campaign Detail",
+              style: TextStyle(color: Colors.white),
+            ),
+          ],
+        ),
+        centerTitle: false,
       ),
       body: SingleChildScrollView(
         child: Padding(

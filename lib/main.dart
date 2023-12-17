@@ -38,7 +38,6 @@ class MyApp  extends StatelessWidget {
 
 
           // "/": (context) => LoginPage(),
-          // "/": (context) => HomePage(),
           // "/": (context) => CreatorsPage(),
           // "/": (context) => CompanyHomePage(),
           // "/": (context) => InfluencerProfile(),
@@ -52,7 +51,7 @@ class MyApp  extends StatelessWidget {
           // "/": (context) => CreatorsPage(),
           // "/": (context) => InfluencerHomePage(),
           // "/": (context) => InfluencerProfile(),
-          "/": (context) => CampaignDetailPage(),
+          // "/": (context) => CampaignDetailPage(),
 
         }
     );
