@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:trendmaster/pages/Budget.dart';
 import 'package:trendmaster/pages/add_details_page.dart';
@@ -13,12 +14,16 @@ import 'package:trendmaster/pages/creators_page.dart';
 import 'package:trendmaster/pages/influencer_home_page.dart';
 import 'package:trendmaster/pages/influencer_profile_page.dart';
 import 'package:trendmaster/pages/login_page.dart';
+import 'package:trendmaster/pages/notification_page_of_influencer.dart';
+import 'package:trendmaster/pages/welcome_page.dart';
 
-void main(){
-  runApp(MyApp());
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(const MyApp());
 }
 
-class MyApp  extends StatelessWidget {
+class MyApp extends StatelessWidget {
   const MyApp ({super.key});
 
   @override
@@ -39,23 +44,22 @@ class MyApp  extends StatelessWidget {
         routes: <String, WidgetBuilder>{
 
 
-          // "/": (context) => LoginPage(),
+          // "/": (context) => RegistrationOptionsScreen(),
           // "/": (context) => CreatorsPage(),
           // "/": (context) => CompanyHomePage(),
           // "/": (context) => InfluencerProfile(),
           // "/": (context) => InfluencerHomePage(),
           // "/": (context) => Budget(),
-          //    "/": (context) => LoginPage(),
+          // "/": (context) => LoginPage(),
           // "/": (context) => AddDetailsPage(),
-          // "/": (context) => CompanyHomePage(),
           // "/": (context) => CompanyLocationPage(),
           // "/": (context) => CompanySuccessPage(),
-          // "/": (context) => CreatorsPage(),
           // "/": (context) => InfluencerHomePage(),
-          // "/": (context) => InfluencerProfile(),
           // "/": (context) => CampaignDetailPage(),
           //   "/": (context) => CompanyDetailPage(),
-              "/": (context) => CompanyReviewlPage(),
+          //     "/": (context) => CompanyReviewlPage(),
+          "/": (context) => NotificationOfInfluencer(),
+
 
         }
     );

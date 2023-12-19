@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
-import 'creators_page.dart';
+import 'package:trendmaster/pages/Budget.dart';
+import 'package:trendmaster/pages/add_details_page.dart';
+import 'package:trendmaster/pages/campaign_Detail_page.dart';
+import 'package:trendmaster/pages/company_detail_page.dart';
+import 'package:trendmaster/pages/company_home_page.dart';
+import 'package:trendmaster/pages/backup_creators_pg.dart';
+import 'package:trendmaster/pages/company_location.dart';
+import 'package:trendmaster/pages/company_susccess_page.dart';
+import 'package:trendmaster/pages/creators_page.dart';
+import 'package:trendmaster/pages/influencer_home_page.dart';
+import 'package:trendmaster/pages/influencer_profile_page.dart';
+import 'package:trendmaster/pages/login_page.dart';
+
+import 'influencer_profile_page.dart';
 
 class LoginPage extends StatelessWidget {
   void onPressed(BuildContext context) {
     // Navigate to the HomePage
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (context) => CreatorsPage()),
+      MaterialPageRoute(builder: (context) => AddDetailsPage()),
     );
   }
 
