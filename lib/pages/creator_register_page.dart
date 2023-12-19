@@ -10,21 +10,27 @@ class _InfluencerRegistrationScreenState
     extends State<InfluencerRegistrationScreen> {
   DateTime? selectedDate;
   String? selectedGender;
-  String? selectedNiche;
-  List<String> niches = [
-    'Beauty',
-    'Fitness',
-    'Technology',
-    'Fashion',
-    'Travel',
-    'Food',
-    'Gaming',
-    'Lifestyle',
-    'Health',
-    'Other',
-  ];
 
-  TextEditingController fullNameController = TextEditingController();
+
+  List<String> selectedNiches = [];
+
+  List<Map<String, dynamic>> getNicheList() {
+    return [
+      {'niche': 'Fashion', 'color': Colors.teal},
+      {'niche': 'Motivate', 'color': Colors.teal},
+      {'niche': 'Food Vlog', 'color': Colors.teal},
+      {'niche': 'Entertainment', 'color': Colors.teal},
+      {'niche': 'Informative', 'color': Colors.teal},
+      {'niche': 'Makeup', 'color': Colors.teal},
+      {'niche': 'Content Creator', 'color': Colors.teal},
+      {'niche': 'Model', 'color': Colors.teal},
+      {'niche': 'Comedy', 'color': Colors.teal},
+    ];
+  }
+
+  TextEditingController firstNameController = TextEditingController();
+  TextEditingController middleNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController passwordController = TextEditingController(); // Added password controller
@@ -55,54 +61,85 @@ class _InfluencerRegistrationScreenState
                 ),
               ),
               TextFormField(
-                controller: fullNameController,
+                controller: firstNameController,
                 decoration: InputDecoration(
-                  labelText: 'Full Name',
+                  labelText: 'First Name',
                   border: OutlineInputBorder(),
                 ),
               ),
               SizedBox(height: 10),
+              TextFormField(
+                controller: middleNameController,
+                decoration: InputDecoration(
+                  labelText: 'Middle Name',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              SizedBox(height: 10),
+              TextFormField(
+                controller: lastNameController,
+                decoration: InputDecoration(
+                  labelText: 'Last Name',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              SizedBox(height: 10),
+
               Text(
-                'Date of Birth',
+                'Address',
                 style: TextStyle(
                   fontSize: 18,
                 ),
               ),
-              InkWell(
-                onTap: () async {
-                  final DateTime? picked = await showDatePicker(
-                    context: context,
-                    initialDate: DateTime.now(),
-                    firstDate: DateTime(1900),
-                    lastDate: DateTime.now(),
-                  );
-                  if (picked != null) {
-                    setState(() {
-                      selectedDate = picked;
-                    });
-                  }
-                },
-                child: InputDecorator(
-                  decoration: InputDecoration(
-                    hintText: 'Select Date',
-                    border: OutlineInputBorder(),
-                  ),
-                  child: selectedDate != null
-                      ? Text(
-                    "${selectedDate!.toLocal()}".split(' ')[0],
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  )
-                      : Text(
-                    'Select Date',
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
+              TextFormField(
+                controller: emailController,
+                decoration: InputDecoration(
+                  labelText: 'Address',
+                  border: OutlineInputBorder(),
                 ),
               ),
               SizedBox(height: 10),
+              // Text(
+              //   'Date of Birth',
+              //   style: TextStyle(
+              //     fontSize: 18,
+              //   ),
+              // ),
+              // InkWell(
+              //   onTap: () async {
+              //     final DateTime? picked = await showDatePicker(
+              //       context: context,
+              //       initialDate: DateTime.now(),
+              //       firstDate: DateTime(1900),
+              //       lastDate: DateTime.now(),
+              //     );
+              //     if (picked != null) {
+              //       setState(() {
+              //         selectedDate = picked;
+              //       });
+              //     }
+              //   },
+              //   child: InputDecorator(
+              //     decoration: InputDecoration(
+              //       hintText: 'Select Date',
+              //       border: OutlineInputBorder(),
+              //     ),
+              //     child: selectedDate != null
+              //         ? Text(
+              //       "${selectedDate!.toLocal()}".split(' ')[0],
+              //       style: TextStyle(
+              //         fontSize: 18,
+              //       ),
+              //     )
+              //         : Text(
+              //       'Select Date',
+              //       style: TextStyle(
+              //         fontSize: 18,
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              // SizedBox(height: 10),
               Text(
                 'Gender',
                 style: TextStyle(
@@ -202,7 +239,26 @@ class _InfluencerRegistrationScreenState
                   border: OutlineInputBorder(),
                 ),
               ),
+              SizedBox(height: 10),
+
+              //Rate Section
+              Text(
+                'Rate per content',
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              TextFormField(
+                controller: otherProfilesController,
+                decoration: InputDecoration(
+                  labelText: 'Rate',
+                  border: OutlineInputBorder(),
+                ),
+              ),
               SizedBox(height: 20),
+
+
               Text(
                 'Niche/Category',
                 style: TextStyle(
@@ -210,24 +266,47 @@ class _InfluencerRegistrationScreenState
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              DropdownButtonFormField<String>(
-                decoration: InputDecoration(
-                  labelText: 'Select Niche/Category',
-                  border: OutlineInputBorder(),
-                ),
-                value: selectedNiche,
-                onChanged: (String? value) {
-                  setState(() {
-                    selectedNiche = value;
-                  });
-                },
-                items: niches.map((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
+              SizedBox(height: 10),
+
+              // Select Niche Section
+              Text(
+                'Select Niche*',
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
+              SizedBox(height: 5),
+
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Wrap(
+                    spacing: 8,
+                    runSpacing: 8,
+                    children: getNicheList().map((location) {
+                      return OutlinedButton(
+                        onPressed: () {
+                          setState(() {
+                            selectedNiches.contains(location['niche'])
+                                ? selectedNiches.remove(location['niche'])
+                                : selectedNiches.add(location['niche']);
+                          });
+                        },
+                        child: Text(
+                          location['niche'],
+                          style: TextStyle(
+                            color: selectedNiches.contains(location['niche']) ? Colors.white : location['color'],
+                          ),
+                        ),
+                        style: OutlinedButton.styleFrom(
+                          primary: selectedNiches.contains(location['niche']) ? location['color'] : null,
+                          backgroundColor: selectedNiches.contains(location['niche']) ? location['color'] : null,
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ],
+              ),
+
               SizedBox(height: 20),
               Center(
                 child: ElevatedButton(
