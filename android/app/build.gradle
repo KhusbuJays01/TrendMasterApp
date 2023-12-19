@@ -22,6 +22,9 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+//this is addecd
+apply plugin: 'com.google.gms.google-services'
+
 android {
     namespace "trendmaster.com.trendmaster"
     compileSdkVersion flutter.compileSdkVersion

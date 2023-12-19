@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "39412451429",
+    "project_id": "trendmaster-group",
+    "storage_bucket": "trendmaster-group.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39412451429:android:bc9aa058379a02f69ede8c",
+        "android_client_info": {
+          "package_name": "trendmaster.com.trendmaster"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuCCtNF1wT5MXT3RfSGHhO1JBkwaf4_pM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
