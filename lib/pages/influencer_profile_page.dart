@@ -5,7 +5,16 @@ class InfluencerProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Influencer Profile", style: TextStyle(color: Colors.white),),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: Text(
+          "Influencer Profile",
+          style: TextStyle(color: Colors.white),
+        ),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -13,10 +22,8 @@ class InfluencerProfile extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-
-              //Profile Description Section
+              // Profile Description Section
               Container(
-                // height: 400,
                 padding: EdgeInsets.all(15),
                 decoration: BoxDecoration(
                   color: Colors.grey.shade200,
@@ -24,68 +31,49 @@ class InfluencerProfile extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-
-                    //Profile Image, Name, Location and Edit Option
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-
-                        //Image
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            CircleAvatar(
-                              radius: 40,
-                              backgroundImage: AssetImage('assets/images/profile.png'),
-                            ),
-                            SizedBox(width: 15,),
-
-                            // Influencer name and Location
-                            Container(
-                                // color: Colors.cyan,
-                                child: Column(
-                                  children: [
-                                    Text("Khusbu Kumari",
-                                      style:TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black87,),),
-
-                                    Container(
-                                      // color: Colors.red,
-                                      child: Row(
-                                        children: [
-                                          Icon(
-                                            Icons.location_on,
-                                            size: 20,
-                                            color: Colors.red,
-                                          ),
-                                          Text(
-                                            'Kathmandu, Nepal ',
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                              color: Colors.black87,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                )
-                            ),
-                          ],
-                        ),
-
-                        //Replacing it with EDIT LOGO
-                        Padding(
-                          padding: const EdgeInsets.only(),
-                          child: Icon(
-                            Icons.location_on,
-                            size: 20,
-                            color: Colors.red,
+                    // Profile Image, Name, Location, and Edit Option
+                    Center(
+                      child: Column(
+                        children: [
+                          // Image
+                          CircleAvatar(
+                            radius: 40,
+                            backgroundImage:
+                            AssetImage('assets/images/profile.png'),
                           ),
-                        ),
-                      ],
+                          SizedBox(
+                            height: 10,
+                          ),
+                          // Influencer name and Location
+                          Text(
+                            "Khusbu Kumari",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black87,
+                            ),
+                          ),
+                          Container(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.location_on,
+                                  size: 20,
+                                  color: Colors.red,
+                                ),
+                                Text(
+                                  'Kathmandu, Nepal ',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black87,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     SizedBox(height: 8),
 
@@ -107,84 +95,128 @@ class InfluencerProfile extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.all(10),
                       padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(25),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
                       ),
-
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                        Text(
-                        'Area of Expertise',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.black87,
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          color: Colors.grey[300],
-                          borderRadius: BorderRadius.circular(25),
-                        ),
-                        child: Text('Motivation'),
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          color: Colors.grey[300],
-                          borderRadius: BorderRadius.circular(25),
-                        ),
-                        child: Text('Lifestyle'),),
+                          Text(
+                            'Area of Expertise',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.black87,
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              color: Colors.grey[300],
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                            child: Text('Motivation'),
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              color: Colors.grey[300],
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                            child: Text('Lifestyle'),
+                          ),
                         ],
                       ),
                     ),
                     SizedBox(height: 5),
 
                     Container(
-                      color: Colors.teal[100],
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Colors.teal[100],
+                      ),
                       height: 60,
                       padding: EdgeInsets.all(5),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-
                         children: [
-                        Text("Lets work together", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
-                        Text("Creators Rate Per Creative: Rs. 5000/-", style: TextStyle(fontSize: 14),)
-
-                      ],),
+                          Text(
+                            "Lets work together",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            "Creators Rate Per Creative: Rs. 5000/-",
+                            style: TextStyle(fontSize: 14),
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ),
               ),
               SizedBox(height: 10),
 
-              //Social Media Details Section
+              // Social Media Details Section
               Container(
                 color: Colors.grey.shade200,
-
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
-
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.start, // Align to the left
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Image.asset('assets/images/profile.png',height: 80, width: 80),
-                          Image.asset('assets/images/profile.png',height: 80, width: 80),
-                          Image.asset('assets/images/profile.png',height: 80, width: 80),
+                          Container(
+                            child: Text(
+                              "80k",
+                              style: TextStyle(
+                                fontSize: 35,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Image.asset('assets/images/profile.png',
+                              height: 80, width: 80),
                         ],
-
                       ),
-
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.start, // Align to the left
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text("80k", style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-                          Text("50k", style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-                          Text("40k", style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+                          Container(
+                            child: Text(
+                              "50k",
+                              style: TextStyle(
+                                fontSize: 35,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Image.asset('assets/images/profile.png',
+                              height: 80, width: 80),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start, // Align to the left
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            child: Text(
+                              "40k",
+                              style: TextStyle(
+                                fontSize: 35,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Image.asset('assets/images/profile.png',
+                              height: 80, width: 80),
                         ],
                       ),
                     ],
@@ -198,66 +230,76 @@ class InfluencerProfile extends StatelessWidget {
                 color: Colors.grey.shade200,
                 child: Column(
                   children: [
-                    Text("Worked with Companies",
-                      style:TextStyle(
+                    Text(
+                      "Worked with Companies",
+                      style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black87,),),
-
+                        color: Colors.black87,
+                      ),
+                    ),
                     SizedBox(height: 10,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset('assets/images/profile.png',height: 80, width: 80),
-                        Image.asset('assets/images/profile.png',height: 80, width: 80),
-                        Image.asset('assets/images/profile.png',height: 80, width: 80),
-                        Image.asset('assets/images/profile.png',height: 80, width: 80),
+                        Image.asset('assets/images/profile.png',
+                            height: 80, width: 80),
+                        Image.asset('assets/images/profile.png',
+                            height: 80, width: 80),
+                        Image.asset('assets/images/profile.png',
+                            height: 80, width: 80),
+                        Image.asset('assets/images/profile.png',
+                            height: 80, width: 80),
                       ],
                     ),
                     SizedBox(height: 10,),
-
                     Container(
-
                       height: 26,
                       width: 120,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                         color: Colors.teal,
-
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(5.0),
-                        child: Text("ADD MORE", textAlign: TextAlign.center, style: TextStyle(fontSize: 13, color: Colors.white, )),
+                        child: Text(
+                          "ADD MORE",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 13, color: Colors.white),
+                        ),
                       ),
                     ),
                     SizedBox(height: 10,),
                   ],
                 ),
-
               ),
               SizedBox(height: 10,),
 
-
-              //Gallery
+              // Gallery
               Container(
                 color: Colors.grey.shade200,
                 child: Column(
                   children: [
-                    Text("Gallery",
-                      style:TextStyle(
+                    Text(
+                      "Gallery",
+                      style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black87,),),
-
+                        color: Colors.black87,
+                      ),
+                    ),
                     SizedBox(height: 10,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset('assets/images/profile.png',height: 80, width: 80),
-                        Image.asset('assets/images/profile.png',height: 80, width: 80),
-                        Image.asset('assets/images/profile.png',height: 80, width: 80),
+                        Image.asset('assets/images/profile.png',
+                            height: 80, width: 80),
+                        Image.asset('assets/images/profile.png',
+                            height: 80, width: 80),
+                        Image.asset('assets/images/profile.png',
+                            height: 80, width: 80),
                       ],
                     ),
                     SizedBox(height: 10,),
@@ -266,43 +308,36 @@ class InfluencerProfile extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset('assets/images/profile.png',height: 80, width: 80),
-                        Image.asset('assets/images/profile.png',height: 80, width: 80),
-                        Image.asset('assets/images/profile.png',height: 80, width: 80),
+                        Image.asset('assets/images/profile.png',
+                            height: 80, width: 80),
+                        Image.asset('assets/images/profile.png',
+                            height: 80, width: 80),
+                        Image.asset('assets/images/profile.png',
+                            height: 80, width: 80),
                       ],
                     ),
                     SizedBox(height: 10,),
 
                     Container(
-
                       height: 26,
                       width: 120,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                         color: Colors.teal,
-
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(5.0),
-                        child: Text("ADD MORE", textAlign: TextAlign.center, style: TextStyle(fontSize: 13, color: Colors.white, )),
+                        child: Text(
+                          "ADD MORE",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 13, color: Colors.white),
+                        ),
                       ),
                     ),
                     SizedBox(height: 10,),
                   ],
                 ),
-
-              )
-
-
-
-
-
-
-
-
-
-
-              // Row with three images on the right side
+              ),
             ],
           ),
         ),
@@ -328,33 +363,6 @@ class InfluencerProfile extends StatelessWidget {
             label: 'Profile',
           ),
         ],
-      ),
-    );
-  }
-}
-
-class SmallContainer extends StatelessWidget {
-  final String text;
-
-  const SmallContainer({required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 80,
-      height: 60,
-      padding: EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        color: Colors.grey.shade200,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Text(
-        text,
-        style: TextStyle(
-          fontSize: 10,
-          color: Colors.black87,
-        ),
-        textAlign: TextAlign.center,
       ),
     );
   }

@@ -77,19 +77,17 @@ class CompanyHomePage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-
-              //Search Bar Section
               Container(
-
+                width: MediaQuery.of(context).size.width * 0.9,
                 height: 35,
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), color: Color(0xFFC2BDBD),),
-
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                color: Color(0xFFD9D9D9),
+                child: Row(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10.0),
+                    Icon(Icons.search, color: Colors.grey), // Search Icon
+                    SizedBox(width: 10),
+                    Container(
+                      width: 150,
+                      height: 20,
                       child: TextField(
                         style: TextStyle(color: Colors.black),
                         decoration: InputDecoration.collapsed(
