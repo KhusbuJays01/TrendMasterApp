@@ -50,7 +50,7 @@ class _CompanyDetailPageState extends State<CompanyDetailPage> {
           },
         ),
         title: Text(
-          "Company Detail Page",
+          "Add Details",
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,

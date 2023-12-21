@@ -1,20 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-
 import 'package:google_fonts/google_fonts.dart';
-import 'package:trendmaster/pages/Budget.dart';
-import 'package:trendmaster/pages/add_details_page.dart';
-import 'package:trendmaster/pages/campaign_Detail_page.dart';
-import 'package:trendmaster/pages/company_detail_page.dart';
-import 'package:trendmaster/pages/company_home_page.dart';
-import 'package:trendmaster/pages/backup_creators_pg.dart';
-import 'package:trendmaster/pages/company_location.dart';
-import 'package:trendmaster/pages/company_success_page.dart';
-import 'package:trendmaster/pages/creators_page.dart';
-import 'package:trendmaster/pages/influencer_home_page.dart';
-import 'package:trendmaster/pages/influencer_profile_page.dart';
-import 'package:trendmaster/pages/login_page.dart';
-import 'package:trendmaster/pages/welcome_page.dart';
+import 'package:trendmaster/new_pages/login_page.dart';
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,19 +29,7 @@ class MyApp extends StatelessWidget {
         //Route
         routes: <String, WidgetBuilder>{
 
-          "/": (context) => RegistrationOptionsScreen(),
-          // "/": (context) => CreatorsPage(),
-          // "/": (context) => CompanyHomePage(),
-          // "/": (context) => InfluencerProfile(),
-          // "/": (context) => InfluencerHomePage(),
-          // "/": (context) => Budget(),
-          // "/": (context) => LoginPage(),
-          // "/": (context) => AddDetailsPage(),
-          // "/": (context) => CompanyLocationPage(),
-          // "/": (context) => CompanySuccessPage(),
-          // "/": (context) => InfluencerHomePage(),
-          // "/": (context) => CampaignDetailPage(),
-
+          "/": (context) => LoginPage(),
         }
     );
   }

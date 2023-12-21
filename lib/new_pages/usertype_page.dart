@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:trendmaster/pages/login_page.dart';
+import 'package:trendmaster/new_pages/company_registration.dart';
+import 'package:trendmaster/new_pages/creator_registration.dart';
 
-import 'company_register_page.dart';
-import 'creator_registration.dart';
 
-class RegistrationOptionsScreen extends StatelessWidget {
+class UsertypePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +15,7 @@ class RegistrationOptionsScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               'Choose Your Account Type',
               style: TextStyle(
                 fontSize: 20,
@@ -24,18 +23,21 @@ class RegistrationOptionsScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20),
+
+
+            // Button One Section
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => InfluencerRegistrationScreen(),
+                    builder: (context) => CreatorRegistration(),
                   ),
                 );
               },
               style: ElevatedButton.styleFrom(
                 primary: Colors.white,
-                side: BorderSide(
+                side: const BorderSide(
                   color: Colors.purple,
                   width: 3.0,
                 ),
@@ -55,26 +57,28 @@ class RegistrationOptionsScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10),
-            Text(
-              'Influencer',
+            // Button Two Section
+            const Text(
+              'Creator',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 14,
               ),
             ),
             SizedBox(height: 20),
+
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => InfluencerRegistrationScreen(),
+                    builder: (context) => CompanyRegistrationScreen(),
                   ),
                 );
               },
               style: ElevatedButton.styleFrom(
                 primary: Colors.white,
-                side: BorderSide(
+                side: const BorderSide(
                   color: Colors.purple,
                   width: 3.0,
                 ),
@@ -94,7 +98,7 @@ class RegistrationOptionsScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10),
-            Text(
+            const Text(
               'Company',
               style: TextStyle(
                 color: Colors.black,
