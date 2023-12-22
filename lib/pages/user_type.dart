@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trendmaster/pages/login_page.dart';
 
 import 'company_register_page.dart';
-import 'creator_register_page.dart';
+import 'creator_registration.dart';
 
 class RegistrationOptionsScreen extends StatelessWidget {
   @override
@@ -73,7 +73,7 @@ class RegistrationOptionsScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => CompanyRegistrationScreen(),
+                    builder: (context) => InfluencerRegistrationScreen(),
                   ),
                 );
               },
