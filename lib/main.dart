@@ -15,7 +15,7 @@ import 'package:trendmaster/pages/influencer_home_page.dart';
 import 'package:trendmaster/pages/influencer_profile_page.dart';
 import 'package:trendmaster/pages/login_page.dart';
 import 'package:trendmaster/pages/notification_page_of_influencer.dart';
-import 'package:trendmaster/pages/welcome_page.dart';
+import 'package:trendmaster/pages/user_type.dart';
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
 
           // "/": (context) => RegistrationOptionsScreen(),
           // "/": (context) => CreatorsPage(),
-          // "/": (context) => CompanyHomePage(),
+          "/": (context) => CompanyHomePage(),
           // "/": (context) => InfluencerProfile(),
           // "/": (context) => InfluencerHomePage(),
           // "/": (context) => Budget(),
@@ -58,7 +58,9 @@ class MyApp extends StatelessWidget {
           // "/": (context) => CampaignDetailPage(),
           //   "/": (context) => CompanyDetailPage(),
           //     "/": (context) => CompanyReviewlPage(),
-          "/": (context) => NotificationOfInfluencer(),
+          // "/": (context) => NotificationOfInfluencer(),
+          //   "/": (context) => UserSelectionScreen(),
+
 
 
         }

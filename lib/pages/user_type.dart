@@ -9,8 +9,8 @@ class RegistrationOptionsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Registration Options'),
-        backgroundColor: Colors.purple,
+        title: Center(child: Text('Registration Options')),
+        backgroundColor: Colors.purple, // Set AppBar background color
       ),
       body: Center(
         child: Column(
@@ -21,6 +21,7 @@ class RegistrationOptionsScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
+                color: Colors.purple, // Set text color
               ),
             ),
             SizedBox(height: 20),
@@ -34,9 +35,9 @@ class RegistrationOptionsScreen extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.white,
+                primary: Colors.purple,
                 side: BorderSide(
-                  color: Colors.purple,
+                  color: Colors.white,
                   width: 3.0,
                 ),
                 padding: EdgeInsets.all(10),
@@ -44,6 +45,10 @@ class RegistrationOptionsScreen extends StatelessWidget {
               child: Container(
                 width: 60,
                 height: 60,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white,
+                ),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Image.asset(
@@ -58,7 +63,7 @@ class RegistrationOptionsScreen extends StatelessWidget {
             Text(
               'Influencer',
               style: TextStyle(
-                color: Colors.black,
+                color: Colors.purple,
                 fontSize: 14,
               ),
             ),
@@ -73,9 +78,9 @@ class RegistrationOptionsScreen extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.white,
+                primary: Colors.purple,
                 side: BorderSide(
-                  color: Colors.purple,
+                  color: Colors.white,
                   width: 3.0,
                 ),
                 padding: EdgeInsets.all(10),
@@ -83,6 +88,10 @@ class RegistrationOptionsScreen extends StatelessWidget {
               child: Container(
                 width: 60,
                 height: 60,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white,
+                ),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Image.asset(
@@ -97,7 +106,7 @@ class RegistrationOptionsScreen extends StatelessWidget {
             Text(
               'Company',
               style: TextStyle(
-                color: Colors.black,
+                color: Colors.purple,
                 fontSize: 14,
               ),
             ),
@@ -107,4 +116,3 @@ class RegistrationOptionsScreen extends StatelessWidget {
     );
   }
 }
-
