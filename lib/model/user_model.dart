@@ -18,7 +18,7 @@ class UserModel {
   String? userType;
 
   UserModel({this.uid, this.firstName, this.middleName, this.lastName, this.address, this.gender, this.email, this.phone, this.instagram,
-  this.youtube, this.facebook, this.instagramSubscriber, this.youtubeSubscriber, this.facebookSubscriber, this.niche, this.description, this.userType});
+    this.youtube, this.facebook, this.instagramSubscriber, this.youtubeSubscriber, this.facebookSubscriber, this.niche, this.description, this.userType});
 
   // receiving data from server
   factory UserModel.fromMap(map){
@@ -42,25 +42,76 @@ class UserModel {
       userType: map['userType'],
     );
   }
-    // sending data to server
-    Map<String, dynamic> toMap(){
-      return {
-        'firstName' : firstName,
-        if (middleName != null && middleName!.isNotEmpty) 'middleName': middleName,
-        'lastName' : lastName,
-        'address': address,
-        'gender' : gender,
-        'email': email,
-        'phone' : phone,
-        'instagram': instagram,
-        'youtube' : youtube,
-        'facebook': facebook,
-        'instagramSubscriber' : instagramSubscriber,
-        'youtubeSubscriber': youtubeSubscriber,
-        'facebookSubscriber' : facebookSubscriber,
-        'niche': niche,
-        'description': description,
-        'userType': userType,
+  // sending data to server
+  Map<String, dynamic> toMap(){
+    return {
+      'firstName' : firstName,
+      if (middleName != null && middleName!.isNotEmpty) 'middleName': middleName,
+      'lastName' : lastName,
+      'address': address,
+      'gender' : gender,
+      'email': email,
+      'phone' : phone,
+      'instagram': instagram,
+      'youtube' : youtube,
+      'facebook': facebook,
+      'instagramSubscriber' : instagramSubscriber,
+      'youtubeSubscriber': youtubeSubscriber,
+      'facebookSubscriber' : facebookSubscriber,
+      'niche': niche,
+      'description': description,
+      'userType': userType,
     };
   }
+}
+
+class CompanyModel{
+  String? uid;
+  String? name;
+  String? address;
+  String? email;
+  String? phone;
+  String? website;
+  String? facebook;
+  String? twitter;
+  String? linkedin;
+  String? description;
+  String? userType;
+
+  CompanyModel({this.uid, this.name, this.address, this.email, this.phone, this.website, this.facebook, this.twitter, this.linkedin, this.description, this.userType});
+
+  // receiving data from server
+  factory CompanyModel.fromMap(map){
+    return CompanyModel(
+      uid: map['uid'],
+      name: map['name'],
+      address: map['address'],
+      email: map['email'],
+      phone: map['phone'],
+      website: map['website'],
+      facebook: map['facebook'],
+      twitter: map['twitter'],
+      linkedin: map['linkedin'],
+      description: map['description'],
+      userType: map['userType'],
+    );
+  }
+
+  // sending data to server
+  Map<String, dynamic> toMap() {
+    return {
+      'name': name,
+      'address': address,
+      'email': email,
+      'phone': phone,
+      'website': website,
+      'facebook': facebook,
+      'twitter': twitter,
+      'linkedin': linkedin,
+      'description': description,
+      'userType': userType,
+    };
+  }
+
+
 }
