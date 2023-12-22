@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -29,8 +28,6 @@ class _CompanyRegistrationScreenState
 
   FirebaseAuth _auth = FirebaseAuth.instance;
   FirebaseFirestore _firestore = FirebaseFirestore.instance;
-  // FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
-  // firebaseAppCheck.installAppCheckProviderFactory(AppCheckProviderFactory.getInstance());
 
   Widget companyInformation(){
     return Column(

@@ -1,22 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'package:trendmaster/pages/Budget.dart';
-import 'package:trendmaster/pages/add_details_page.dart';
-import 'package:trendmaster/pages/campaign_Detail_page.dart';
-import 'package:trendmaster/pages/company_detail_page.dart';
-import 'package:trendmaster/pages/company_home_page.dart';
-import 'package:trendmaster/pages/backup_creators_pg.dart';
-import 'package:trendmaster/pages/company_location.dart';
-import 'package:trendmaster/pages/company_review_page.dart';
-// import 'package:trendmaster/pages/company_susccess_page.dart';
-import 'package:trendmaster/pages/creators_page.dart';
-import 'package:trendmaster/pages/influencer_home_page.dart';
-import 'package:trendmaster/pages/influencer_profile_page.dart';
-import 'package:trendmaster/pages/login_page.dart';
-import 'package:trendmaster/pages/notification_page_of_influencer.dart';
-import 'package:trendmaster/pages/user_type.dart';
 import 'package:trendmaster/new_pages/login_page.dart';
 
 
@@ -47,23 +31,8 @@ class MyApp extends StatelessWidget {
         routes: <String, WidgetBuilder>{
 
 
-          // "/": (context) => CompanyHomePage(),
-          // "/": (context) => LoginPage(),
-          // "/": (context) => RegistrationOptionsScreen(),
-          // "/": (context) => CreatorsPage(),
-          // "/": (context) => InfluencerProfile(),
-          // "/": (context) => InfluencerHomePage(),
-          // "/": (context) => Budget(),
-          // "/": (context) => LoginPage(),
-          "/": (context) => AddDetailsPage(),
-          // "/": (context) => CompanyLocationPage(),
-          // "/": (context) => CompanySuccessPage(),
-          // "/": (context) => InfluencerHomePage(),
-          // "/": (context) => CampaignDetailPage(),
-          //   "/": (context) => CompanyDetailPage(),
-          //     "/": (context) => CompanyReviewlPage(),
-          // "/": (context) => NotificationOfInfluencer(),
-          //   "/": (context) => UserSelectionScreen(),
+          "/": (context) => LoginPage(),
+
 
 
 

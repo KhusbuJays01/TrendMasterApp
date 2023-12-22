@@ -10,10 +10,11 @@ class UsertypePage extends StatelessWidget {
       body: Center(
         child: Column(
           children: <Widget>[
+            SizedBox(height: 70),
             Image.asset(
               'assets/images/logo.png',
-              width: 300,
-              height: 300,
+              width: 200,
+              height: 200,
             ),
             SizedBox(height: 20),
 

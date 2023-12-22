@@ -7,11 +7,12 @@ class CreatorHomePage extends StatefulWidget {
 
 class _CreatorHomePageState extends State<CreatorHomePage> {
   int currentIndex = 0;
-
+  final PageController _pageController = PageController();
   final List<String> images = [
     'assets/images/home.png',
     'assets/images/cocacola.png',
-    'assets/images/sumsung.png', // Add more images as needed
+    'assets/images/sumsung.png',
+    // Add more images as needed
     // Add more image paths as needed
   ];
 
@@ -65,6 +66,7 @@ class _CreatorHomePageState extends State<CreatorHomePage> {
               height: 350,
               width: 400,
               child: PageView.builder(
+                controller: _pageController,
                 itemCount: images.length,
                 onPageChanged: (index) {
                   setState(() {
@@ -72,7 +74,24 @@ class _CreatorHomePageState extends State<CreatorHomePage> {
                   });
                 },
                 itemBuilder: (context, index) {
-                  return Image.asset(images[index]);
+                  return AnimatedBuilder(
+                    animation: _pageController,
+                    builder: (context, child) {
+                      double value = 1.0;
+                      if (_pageController.position.haveDimensions) {
+                        value = _pageController.page! - index;
+                        value = (1 - (value.abs() * 0.5)).clamp(0.0, 1.0);
+                      }
+                      return Center(
+                        child: SizedBox(
+                          height: Curves.easeInOut.transform(value) * 300,
+                          width: Curves.easeInOut.transform(value) * 300,
+                          child: child,
+                        ),
+                      );
+                    },
+                    child: Image.asset(images[index]),
+                  );
                 },
               ),
             ),
