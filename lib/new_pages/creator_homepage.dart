@@ -129,8 +129,8 @@ class _CreatorHomePageState extends State<CreatorHomePage> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.message, size: 30, color: Colors.grey),
-                        title: Text('Messages', style: TextStyle(color: Colors.black)),
+                        leading: Icon(Icons.menu_book, size: 30, color: Colors.grey),
+                        title: Text('explore', style: TextStyle(color: Colors.black)),
                         onTap: () {
                           // Add your navigation logic here
                         },
@@ -146,7 +146,8 @@ class _CreatorHomePageState extends State<CreatorHomePage> {
                         leading: Icon(Icons.logout, size: 30, color: Colors.grey),
                         title: Text('logout', style: TextStyle(color: Colors.black)),
                         onTap: () {
-                          // Add your navigation logic here
+                          // Show logout confirmation dialog
+                          _showLogoutPopup(context);
                         },
                       ),
 
@@ -301,6 +302,54 @@ class _CreatorHomePageState extends State<CreatorHomePage> {
           ],
         ),
       ),
+    );
+  }
+  // Function to show logout confirmation dialog in the center
+  void _showLogoutPopup(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+          child: Container(
+            padding: EdgeInsets.all(16),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  'Are you sure you want to logout?',
+                  style: TextStyle(fontSize: 18, color: Colors.black),
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.teal, // Teal color for the "Yes" button
+                      ),
+                      onPressed: () {
+                        // Add your logout logic here
+                        Navigator.of(context).pop();
+                      },
+                      child: Text('Yes', style: TextStyle(color: Colors.white)),
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.teal, // Teal color for the "No" button
+                      ),
+                      onPressed: () {
+                        // Cancel the logout action
+                        Navigator.of(context).pop();
+                      },
+                      child: Text('No', style: TextStyle(color: Colors.white)),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }

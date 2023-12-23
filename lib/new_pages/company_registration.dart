@@ -237,12 +237,12 @@ class _CompanyRegistrationScreenState
         route) => false);
   }
 
-
   @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
         title: const Text('Influencer Registration'),
+        iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: Colors.teal,
       ),
       body: SingleChildScrollView(

@@ -3,7 +3,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:trendmaster/new_pages/company_homepage.dart';
 import 'package:trendmaster/new_pages/creator_homepage.dart';
+import 'package:trendmaster/new_pages/creator_registration.dart';
 import 'package:trendmaster/new_pages/login_page.dart';
+import 'package:trendmaster/new_pages/usertype_page.dart';
 import 'package:trendmaster/pages/campaign_Detail_page.dart';
 
 
@@ -38,7 +40,10 @@ class MyApp extends StatelessWidget {
           // "/": (context) => LoginPage(),
           // "/": (context) => CampaignDetailPage(),
           // "/": (context) => CompanyHomePage(),
-          "/": (context) => CreatorHomePage(),
+          // "/": (context) => CreatorHomePage(),
+          // "/": (context) => UsertypePage(),
+          "/": (context) => CreatorRegistration(),
+          // "/": (context) => UsertypePage(),
 
 
 
