@@ -44,10 +44,123 @@ class CompanyHomePage extends StatelessWidget {
     return Scaffold(
 
       //App Bar Start
-      appBar: AppBar(
-        title: Text("Home"),
-        centerTitle: true,
-      ),
+        appBar: AppBar(
+          // Add the hamburger icon to open the drawer
+          leading: Builder(
+            builder: (context) => IconButton(
+              icon: Icon(Icons.menu),
+              color: Colors.white, // Set the color to white
+              onPressed: () => Scaffold.of(context).openDrawer(),
+            ),
+          ),
+        ),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              Column(
+                children: [
+                  // Container for profile name and location
+                  Container(
+                    color: Colors.teal,
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 40,
+                          backgroundImage: AssetImage('assets/images/companyProfile.png'),
+                        ),
+                        SizedBox(width: 10, height: 200,),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Khusbu Jaiswal',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.location_on,
+                                  color: Colors.red,
+                                  size: 16,
+                                ),
+                                SizedBox(width: 5),
+                                Text(
+                                  'Bhaktapur',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  // Add space between the two containers
+                  SizedBox(height: 20),
+
+                  // Container for list icons and names
+                  Container(
+                    // color: Colors.white, // You can use any color you prefer
+                    child: Column(
+                      children: [
+                        ListTile(
+                          leading: Icon(Icons.person, size: 30, color: Colors.grey),
+                          title: Text('Profile', style: TextStyle(color: Colors.black)),
+                          onTap: () {
+                            // Add your navigation logic here
+                          },
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.home, size: 30, color: Colors.grey),
+                          title: Text('Home', style: TextStyle(color: Colors.black)),
+                          onTap: () {
+                            // Add your navigation logic here
+                          },
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.message, size: 30, color: Colors.grey),
+                          title: Text('Messages', style: TextStyle(color: Colors.black)),
+                          onTap: () {
+                            // Add your navigation logic here
+                          },
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.notifications, size: 30, color: Colors.grey),
+                          title: Text('Notifications', style: TextStyle(color: Colors.black)),
+                          onTap: () {
+                            // Add your navigation logic here
+                          },
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.logout, size: 30, color: Colors.grey),
+                          title: Text('logout', style: TextStyle(color: Colors.black)),
+                          onTap: () {
+                            // Add your navigation logic here
+                          },
+                        ),
+
+                      ],
+                    ),
+                  ),
+                ],
+              )
+
+
+
+
+            ],
+          ),
+        ),
+
+
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(left: 10, top: 10, right: 10),
@@ -55,25 +168,7 @@ class CompanyHomePage extends StatelessWidget {
             children: [
 
               // Profile Section
-              Container(
-                // color: Colors.orange,
-                child: Row(
-                  children: [
-                    CircleAvatar(
-                      radius: 40, // Increase the radius as per your design
-                      backgroundColor: Colors.cyan,
-                      backgroundImage: AssetImage('assets/images/companyProfile.png'),
-                    ),
 
-                    SizedBox(width: 10),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                      ],
-                    ),
-                  ],
-                ),
-              ),
               SizedBox(height: 10),
               Container(
                 width: MediaQuery.of(context).size.width * 10,
@@ -779,26 +874,26 @@ class CompanyHomePage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.message, size: 30, color: Colors.grey),
-            label: 'Messages',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home, size: 30, color: Colors.grey),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications, size: 30, color: Colors.grey),
-            label: 'Notifications',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person, size: 30, color: Colors.grey),
-            label: 'Profile',
-          ),
-        ],
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   items: const <BottomNavigationBarItem>[
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.message, size: 30, color: Colors.grey),
+      //       label: 'Messages',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.home, size: 30, color: Colors.grey),
+      //       label: 'Home',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.notifications, size: 30, color: Colors.grey),
+      //       label: 'Notifications',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.person, size: 30, color: Colors.grey),
+      //       label: 'Profile',
+      //     ),
+      //   ],
+      // ),
     );
   }
 }

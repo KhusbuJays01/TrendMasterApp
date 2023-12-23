@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:trendmaster/new_pages/company_homepage.dart';
+import 'package:trendmaster/new_pages/creator_homepage.dart';
 import 'package:trendmaster/new_pages/login_page.dart';
+import 'package:trendmaster/pages/campaign_Detail_page.dart';
 
 
 Future<void> main() async{
@@ -28,10 +31,14 @@ class MyApp extends StatelessWidget {
         ),
 
         //Route
+
         routes: <String, WidgetBuilder>{
 
 
-          "/": (context) => LoginPage(),
+          // "/": (context) => LoginPage(),
+          // "/": (context) => CampaignDetailPage(),
+          // "/": (context) => CompanyHomePage(),
+          "/": (context) => CreatorHomePage(),
 
 
 
