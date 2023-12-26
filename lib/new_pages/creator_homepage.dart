@@ -7,7 +7,7 @@ class CreatorHomePage extends StatefulWidget {
 
 class _CreatorHomePageState extends State<CreatorHomePage> {
   int currentIndex = 0;
-  final PageController _pageController = PageController();
+  final PageController _pageController = PageController(viewportFraction: 0.8); // Set viewportFraction to 0.8
   final List<String> images = [
     'assets/images/home.png',
     'assets/images/cocacola.png',
@@ -48,11 +48,10 @@ class _CreatorHomePageState extends State<CreatorHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // Add the hamburger icon to open the drawer
         leading: Builder(
           builder: (context) => IconButton(
             icon: Icon(Icons.menu),
-            color: Colors.white, // Set the color to white
+            color: Colors.white,
             onPressed: () => Scaffold.of(context).openDrawer(),
           ),
         ),
@@ -63,7 +62,6 @@ class _CreatorHomePageState extends State<CreatorHomePage> {
           children: [
             Column(
               children: [
-                // Container for profile name and location
                 Container(
                   color: Colors.teal,
                   child: Row(
@@ -105,13 +103,8 @@ class _CreatorHomePageState extends State<CreatorHomePage> {
                     ],
                   ),
                 ),
-
-                // Add space between the two containers
                 SizedBox(height: 20),
-
-                // Container for list icons and names
                 Container(
-                  // color: Colors.white, // You can use any color you prefer
                   child: Column(
                     children: [
                       ListTile(
@@ -146,20 +139,14 @@ class _CreatorHomePageState extends State<CreatorHomePage> {
                         leading: Icon(Icons.logout, size: 30, color: Colors.grey),
                         title: Text('logout', style: TextStyle(color: Colors.black)),
                         onTap: () {
-                          // Show logout confirmation dialog
                           _showLogoutPopup(context);
                         },
                       ),
-
                     ],
                   ),
                 ),
               ],
-            )
-
-
-
-
+            ),
           ],
         ),
       ),
@@ -189,9 +176,8 @@ class _CreatorHomePageState extends State<CreatorHomePage> {
                         value = (1 - (value.abs() * 0.5)).clamp(0.0, 1.0);
                       }
                       return Center(
-                        child: SizedBox(
-                          height: Curves.easeInOut.transform(value) * 300,
-                          width: Curves.easeInOut.transform(value) * 300,
+                        child: Opacity(
+                          opacity: Curves.easeInOut.transform(value),
                           child: child,
                         ),
                       );
@@ -286,7 +272,7 @@ class _CreatorHomePageState extends State<CreatorHomePage> {
                     height: 45,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Colors.teal, // Set the background color to teal
+                      color: Colors.teal,
                     ),
                     child: Center(
                       child: Text(
@@ -304,7 +290,7 @@ class _CreatorHomePageState extends State<CreatorHomePage> {
       ),
     );
   }
-  // Function to show logout confirmation dialog in the center
+
   void _showLogoutPopup(BuildContext context) {
     showDialog(
       context: context,
@@ -325,20 +311,18 @@ class _CreatorHomePageState extends State<CreatorHomePage> {
                   children: [
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.teal, // Teal color for the "Yes" button
+                        primary: Colors.teal,
                       ),
                       onPressed: () {
-                        // Add your logout logic here
                         Navigator.of(context).pop();
                       },
                       child: Text('Yes', style: TextStyle(color: Colors.white)),
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.teal, // Teal color for the "No" button
+                        primary: Colors.teal,
                       ),
                       onPressed: () {
-                        // Cancel the logout action
                         Navigator.of(context).pop();
                       },
                       child: Text('No', style: TextStyle(color: Colors.white)),
@@ -352,4 +336,10 @@ class _CreatorHomePageState extends State<CreatorHomePage> {
       },
     );
   }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: CreatorHomePage(),
+  ));
 }
