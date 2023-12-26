@@ -9,6 +9,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: PromotionPage(),
+      theme: ThemeData(
+        primaryColor: Colors.teal,
+      ),
     );
   }
 }
@@ -39,7 +42,7 @@ class _PromotionPageState extends State<PromotionPage> with SingleTickerProvider
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Thank You!'),
+          title: Center(child: Text('Thank You!')),
           contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
           content: Container(
             width: 300,
@@ -80,62 +83,76 @@ class _PromotionPageState extends State<PromotionPage> with SingleTickerProvider
         ),
         centerTitle: true,
       ),
-      body: ListView(
-        padding: EdgeInsets.all(16.0),
+      backgroundColor: Colors.grey[200], // Set the desired background color
+      body: Column(
         children: [
-          SizedBox(height: 20),
-          Image.asset(
-            'assets/images/logo.png',
-            width: 250,
-            height: 250,
-          ),
-          SizedBox(height: 5),
-          ScaleTransition(
-            scale: _animation,
-            child: Text(
-              'Special Offer Just for You!',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          SizedBox(height: 50),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Image.asset(
+              'assets/images/logo.png',
+              width: 250,
+              height: 250,
             ),
           ),
-          SizedBox(height: 5),
-          ScaleTransition(
-            scale: _animation,
-            child: Text(
-              'Seize your exclusive promotion today!',
-              style: TextStyle(fontSize: 18),
-            ),
-          ),
-          SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              setState(() {
-                isPromotionClaimed = true;
-              });
-              // Add your promotion claiming logic here
-
-              // Assuming you want to give a 5-star rating
-              rating = 5.0;
-
-              // Show the claimed dialog
-              _showClaimedDialog();
-            },
-            style: ElevatedButton.styleFrom(
-              primary: Colors.teal,
-              minimumSize: Size(200, 50), // Set height and width
-            ),
-            child: Text(
-              'Claim Promotion',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ),
-          ),
-          if (isPromotionClaimed)
-            Column(
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 20),
+                ScaleTransition(
+                  scale: _animation,
+                  child: Text(
+                    'Special Offer Just for You!',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                SizedBox(height: 5),
+                ScaleTransition(
+                  scale: _animation,
+                  child: Text(
+                    'Grab this special opportunity now!',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+                SizedBox(height: 30),
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      isPromotionClaimed = true;
+                    });
+                    // Add your promotion claiming logic here
+
+                    // Assuming you want to give a 5-star rating
+                    rating = 5.0;
+
+                    // Show the claimed dialog
+                    _showClaimedDialog();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.teal,
+                  ),
+                  child: Container(
+                    height: 30, // Set the desired button height
+                    width: 150, // Set the desired button width
+                    child: Center(
+                      child: Text(
+                        'Claim Promotion',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                if (isPromotionClaimed)
+                  Column(
+                    children: [
+                      SizedBox(height: 20),
+                    ],
+                  ),
               ],
             ),
+          ),
         ],
       ),
     );
