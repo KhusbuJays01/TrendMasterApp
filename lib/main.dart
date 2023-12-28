@@ -38,14 +38,14 @@ class MyApp extends StatelessWidget {
         routes: <String, WidgetBuilder>{
 
 
-          // "/": (context) => LoginPage(),
+          "/": (context) => LoginPage(),
           // "/": (context) => CampaignDetailPage(),
           // "/": (context) => CompanyHomePage(),
           // "/": (context) => CreatorHomePage(),
           // "/": (context) => UsertypePage(),
           // "/": (context) => CreatorRegistration(),
           // "/": (context) => UsertypePage(),
-          "/": (context) => PromotionPage(),
+          // "/": (context) => PromotionPage(),
 
 
 

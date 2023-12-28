@@ -11,6 +11,8 @@ import 'package:trendmaster/pages/creators_page.dart';
 import 'package:trendmaster/pages/influencer_home_page.dart';
 import 'package:trendmaster/pages/influencer_profile_page.dart';
 import 'package:trendmaster/pages/login_page.dart';
+import 'package:trendmaster/pages/user_type_google.dart';
+
 
 import 'creator_registration.dart';
 import 'influencer_profile_page.dart';
@@ -19,7 +21,7 @@ class LoginPage extends StatelessWidget {
   void onPressed(BuildContext context) {
     // Navigate to the HomePage
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (context) => InfluencerRegistrationScreen()),
+      MaterialPageRoute(builder: (context) => RegistrationOptionsScreenforgoogle()),
     );
   }
 

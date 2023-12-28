@@ -42,6 +42,7 @@ dependencies:
   firebase_app_check: ^0.2.1+8
   shared_preferences: ^2.2.2
   fluttertoast: ^8.2.4
+  google_sign_in: ^6.2.1
 
 
 
