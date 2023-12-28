@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:trendmaster/new_pages/company_homepage.dart';
+import 'package:trendmaster/new_pages/creator_homepage.dart';
 import 'package:trendmaster/pages/login_page.dart';
 
 import 'company_register_page.dart';
@@ -8,7 +10,8 @@ import 'creator_registration.dart';
 class RegistrationOptionsScreenforgoogle extends StatelessWidget {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
 
-  Future<void> _handleGoogleSignIn(BuildContext context, String userType) async {
+  Future<void> _handleGoogleSignIn(
+      BuildContext context, String userType) async {
     try {
       GoogleSignInAccount? googleSignInAccount = await _googleSignIn.signIn();
 
@@ -21,14 +24,14 @@ class RegistrationOptionsScreenforgoogle extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => InfluencerRegistrationScreen(),
+              builder: (context) => CreatorHomePage(),
             ),
           );
         } else if (userType == 'Company') {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => CompanyRegistrationScreen(),
+              builder: (context) => CompanyHomePage(),
             ),
           );
         }
