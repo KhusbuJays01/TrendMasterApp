@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trendmaster/new_pages/user_type_google.dart';
 import 'package:trendmaster/pages/Budget.dart';
 import 'package:trendmaster/pages/add_details_page.dart';
 import 'package:trendmaster/pages/campaign_Detail_page.dart';
@@ -13,7 +14,6 @@ import 'package:trendmaster/pages/influencer_profile_page.dart';
 import 'package:trendmaster/pages/login_page.dart';
 import 'package:trendmaster/pages/user_type_google.dart';
 
-
 import 'creator_registration.dart';
 import 'influencer_profile_page.dart';
 
@@ -21,7 +21,7 @@ class LoginPage extends StatelessWidget {
   void onPressed(BuildContext context) {
     // Navigate to the HomePage
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (context) => RegistrationOptionsScreenforgoogle()),
+      MaterialPageRoute(builder: (context) => UsertypePageForGoogle()),
     );
   }
 
@@ -74,10 +74,10 @@ class LoginPage extends StatelessWidget {
           // Login Button
           FractionallySizedBox(
             widthFactor: 0.85,
-
             child: ElevatedButton(
               onPressed: () => onPressed(context),
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.teal, foregroundColor: Colors.white),
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.teal, foregroundColor: Colors.white),
               child: Text("Login"),
             ),
           ),
@@ -101,7 +101,9 @@ class LoginPage extends StatelessWidget {
                         widthFactor: 0.97,
                         child: ElevatedButton(
                           onPressed: () => onPressed(context),
-                          style: ElevatedButton.styleFrom(backgroundColor: Colors.teal, foregroundColor: Colors.white),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.teal,
+                              foregroundColor: Colors.white),
                           child: Text("Sign up with Google"),
                         ),
                       ),
@@ -109,7 +111,9 @@ class LoginPage extends StatelessWidget {
                         widthFactor: 0.97,
                         child: ElevatedButton(
                           onPressed: () => onPressed(context),
-                          style: ElevatedButton.styleFrom(backgroundColor: Colors.teal, foregroundColor: Colors.white),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.teal,
+                              foregroundColor: Colors.white),
                           child: Text("Sign up with Facebook"),
                         ),
                       ),

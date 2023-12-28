@@ -9,15 +9,14 @@ import 'package:trendmaster/new_pages/login_page.dart';
 import 'package:trendmaster/new_pages/usertype_page.dart';
 import 'package:trendmaster/pages/campaign_Detail_page.dart';
 
-
-Future<void> main() async{
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp ({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,16 +27,17 @@ class MyApp extends StatelessWidget {
         themeMode: ThemeMode.light,
         theme: ThemeData(
           appBarTheme: AppBarTheme(
-            color: Colors.teal,
-              titleTextStyle: TextStyle(fontSize: 22, color: Colors.white,)),
+              color: Colors.teal,
+              titleTextStyle: TextStyle(
+                fontSize: 22,
+                color: Colors.white,
+              )),
           fontFamily: GoogleFonts.aBeeZee().fontFamily,
         ),
 
         //Route
 
         routes: <String, WidgetBuilder>{
-
-
           "/": (context) => LoginPage(),
           // "/": (context) => CampaignDetailPage(),
           // "/": (context) => CompanyHomePage(),
@@ -46,12 +46,6 @@ class MyApp extends StatelessWidget {
           // "/": (context) => CreatorRegistration(),
           // "/": (context) => UsertypePage(),
           // "/": (context) => PromotionPage(),
-
-
-
-
-
-        }
-    );
+        });
   }
 }

@@ -6,7 +6,6 @@ import 'package:trendmaster/new_pages/company_homepage.dart';
 
 import '../model/user_model.dart';
 
-
 enum Gender { Male, Female }
 
 class CreatorRegistration extends StatefulWidget {
@@ -15,6 +14,8 @@ class CreatorRegistration extends StatefulWidget {
 }
 
 class _CreatorRegistrationState extends State<CreatorRegistration> {
+  final _formKey = GlobalKey<FormState>();
+
   TextEditingController firstNameController = TextEditingController();
   TextEditingController middleNameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
@@ -52,7 +53,7 @@ class _CreatorRegistrationState extends State<CreatorRegistration> {
     ];
   }
 
-  //Personal Info Section
+  // Personal Info Section
   Widget buildPersonalInformation() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,6 +72,12 @@ class _CreatorRegistrationState extends State<CreatorRegistration> {
             labelText: 'First Name*',
             border: OutlineInputBorder(),
           ),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter your first name';
+            }
+            return null;
+          },
         ),
         SizedBox(height: 10),
         TextFormField(
@@ -87,28 +94,30 @@ class _CreatorRegistrationState extends State<CreatorRegistration> {
             labelText: 'Last Name*',
             border: OutlineInputBorder(),
           ),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter your last name';
+            }
+            return null;
+          },
         ),
         SizedBox(height: 10),
-        Text(
-          'Address*',
-          style: TextStyle(
-            fontSize: 18,
-          ),
-        ),
+
         TextFormField(
           controller: addressController,
           decoration: InputDecoration(
             labelText: 'Address',
             border: OutlineInputBorder(),
           ),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter your address';
+            }
+            return null;
+          },
         ),
         SizedBox(height: 10),
-        Text(
-          'Gender*',
-          style: TextStyle(
-            fontSize: 18,
-          ),
-        ),
+
         DropdownButtonFormField<String>(
           decoration: InputDecoration(
             labelText: 'Select Gender',
@@ -126,42 +135,50 @@ class _CreatorRegistrationState extends State<CreatorRegistration> {
               child: Text(value),
             );
           }).toList(),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please select your gender';
+            }
+            return null;
+          },
         ),
         SizedBox(height: 10),
-        Text(
-          'Email*',
-          style: TextStyle(
-            fontSize: 18,
-          ),
-        ),
+
         TextFormField(
           controller: emailController,
           decoration: InputDecoration(
             labelText: 'Email',
             border: OutlineInputBorder(),
           ),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter your email';
+            } else if (!RegExp(r'^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+')
+                .hasMatch(value)) {
+              return 'Invalid email address';
+            }
+            return null;
+          },
         ),
         SizedBox(height: 10),
-        Text(
-          'Phone*',
-          style: TextStyle(
-            fontSize: 18,
-          ),
-        ),
+
         TextFormField(
           controller: phoneController,
           decoration: InputDecoration(
             labelText: 'Phone',
             border: OutlineInputBorder(),
           ),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter your phone number';
+            } else if (!RegExp(r'^[0-9]+$').hasMatch(value)) {
+              return 'Invalid phone number';
+            }
+            return null;
+          },
         ),
         SizedBox(height: 10),
-        Text(
-          'Password*',
-          style: TextStyle(
-            fontSize: 18,
-          ),
-        ),
+
         TextFormField(
           controller: passwordController,
           obscureText: true,
@@ -169,8 +186,18 @@ class _CreatorRegistrationState extends State<CreatorRegistration> {
             labelText: 'Password',
             border: OutlineInputBorder(),
           ),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter a password';
+            } else if (value.length < 6) {
+              return 'Password must be at least 6 characters long';
+            }
+            return null;
+          },
         ),
-        SizedBox(height: 10,),
+        SizedBox(
+          height: 10,
+        ),
         TextFormField(
           controller: confirmPasswordController,
           obscureText: true,
@@ -178,12 +205,20 @@ class _CreatorRegistrationState extends State<CreatorRegistration> {
             labelText: 'Confirm Password',
             border: OutlineInputBorder(),
           ),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please confirm your password';
+            } else if (value != passwordController.text) {
+              return 'Passwords do not match';
+            }
+            return null;
+          },
         ),
       ],
     );
   }
 
-  //Social Media Section
+  // Social Media Section
   Widget buildSocialMediaProfiles() {
     return Column(
       children: [
@@ -215,9 +250,17 @@ class _CreatorRegistrationState extends State<CreatorRegistration> {
                 controller: instagramSubscriberController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Subscribers',
+                  labelText: 'Count',
                   border: OutlineInputBorder(),
                 ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter the number of subscribers';
+                  } else if (!RegExp(r'^[0-9]+$').hasMatch(value)) {
+                    return 'Invalid number';
+                  }
+                  return null;
+                },
               ),
             ),
           ],
@@ -243,15 +286,24 @@ class _CreatorRegistrationState extends State<CreatorRegistration> {
                 controller: youtubeSubscriberController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Subscribers',
+                  labelText: 'Count',
                   border: OutlineInputBorder(),
                 ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter the number of subscribers';
+                  } else if (!RegExp(r'^[0-9]+$').hasMatch(value)) {
+                    return 'Invalid number';
+                  }
+                  return null;
+                },
               ),
             ),
           ],
         ),
-        SizedBox(height: 10,),
-
+        SizedBox(
+          height: 10,
+        ),
         Row(
           children: [
             Expanded(
@@ -272,9 +324,17 @@ class _CreatorRegistrationState extends State<CreatorRegistration> {
                 controller: facebookSubscriberController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Subscribers',
+                  labelText: 'Count',
                   border: OutlineInputBorder(),
                 ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter the number of subscribers';
+                  } else if (!RegExp(r'^[0-9]+$').hasMatch(value)) {
+                    return 'Invalid number';
+                  }
+                  return null;
+                },
               ),
             ),
           ],
@@ -296,10 +356,7 @@ class _CreatorRegistrationState extends State<CreatorRegistration> {
           ),
         ),
         SizedBox(height: 10),
-        Text(
-          'Select Niche*',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
+
         SizedBox(height: 5),
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -320,8 +377,9 @@ class _CreatorRegistrationState extends State<CreatorRegistration> {
                   child: Text(
                     location['niche'],
                     style: TextStyle(
-                      color: selectedNiches.contains(location['niche']) ? Colors
-                          .white : location['color'],
+                      color: selectedNiches.contains(location['niche'])
+                          ? Colors.white
+                          : location['color'],
                     ),
                   ),
                   style: OutlinedButton.styleFrom(
@@ -366,11 +424,12 @@ class _CreatorRegistrationState extends State<CreatorRegistration> {
     );
   }
 
-
   void signUp(String email, String password) async {
-    // if (_formKey.currentState!.validate)
-    await _auth.createUserWithEmailAndPassword(email: email, password: password)
-        .then((value) => postDetailsToFirestore());
+    if (_formKey.currentState!.validate()) {
+      await _auth
+          .createUserWithEmailAndPassword(email: email, password: password)
+          .then((value) => postDetailsToFirestore());
+    }
   }
 
   postDetailsToFirestore() async {
@@ -405,21 +464,23 @@ class _CreatorRegistrationState extends State<CreatorRegistration> {
     Fluttertoast.showToast(msg: "Account Created Successfully!");
 
     Navigator.pushAndRemoveUntil(
-        (context), MaterialPageRoute(builder: (context) => CompanyHomePage()), (
-        route) => false);
+        (context),
+        MaterialPageRoute(builder: (context) => CompanyHomePage()),
+        (route) => false);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Influencer Registration'),
+        title: const Text('Creator Registration'),
         iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: Colors.teal,
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20.0),
         child: Form(
+          key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -453,5 +514,3 @@ class _CreatorRegistrationState extends State<CreatorRegistration> {
     );
   }
 }
-
-

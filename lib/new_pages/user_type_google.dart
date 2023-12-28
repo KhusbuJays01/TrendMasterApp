@@ -1,9 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:trendmaster/new_pages/company_registration.dart';
 import 'package:trendmaster/new_pages/creator_registration.dart';
 
+class UsertypePageForGoogle extends StatelessWidget {
+  Future<GoogleSignInAccount?> _handleGoogleSignIn() async {
+    GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
 
-class UsertypePage extends StatelessWidget {
+    try {
+      return await _googleSignIn.signIn();
+    } catch (error) {
+      print('Google Sign-In Error: $error');
+      return null;
+    }
+  }
+
+  void setUserType(String userType) {
+    // Implement your logic to store the user type
+    // You might use a global state management solution or another method.
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,9 +67,9 @@ class UsertypePage extends StatelessWidget {
             ),
             SizedBox(height: 60),
 
-            // Button One Section
+            // Button One Section (For Creator)
             Container(
-              width: MediaQuery.of(context).size.width * 0.9, // Set the desired width (80% of screen width in this example)
+              width: MediaQuery.of(context).size.width * 0.9,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
                 gradient: LinearGradient(
@@ -71,13 +87,17 @@ class UsertypePage extends StatelessWidget {
               child: FittedBox(
                 fit: BoxFit.scaleDown,
                 child: MaterialButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => CreatorRegistration(),
-                      ),
-                    );
+                  onPressed: () async {
+                    GoogleSignInAccount? user = await _handleGoogleSignIn();
+                    if (user != null) {
+                      setUserType("Creator");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CreatorRegistration(),
+                        ),
+                      );
+                    }
                   },
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -123,9 +143,9 @@ class UsertypePage extends StatelessWidget {
             ),
             SizedBox(height: 20),
 
-            // Button Two Section
+            // Button Two Section (For Company)
             Container(
-              width: MediaQuery.of(context).size.width * 0.9, // Set the desired width (80% of screen width in this example)
+              width: MediaQuery.of(context).size.width * 0.9,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
                 gradient: LinearGradient(
@@ -142,15 +162,18 @@ class UsertypePage extends StatelessWidget {
               ),
               child: FittedBox(
                 fit: BoxFit.scaleDown,
-
                 child: MaterialButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => CompanyRegistrationScreen(),
-                      ),
-                    );
+                  onPressed: () async {
+                    GoogleSignInAccount? user = await _handleGoogleSignIn();
+                    if (user != null) {
+                      setUserType("Company");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CompanyRegistrationScreen(),
+                        ),
+                      );
+                    }
                   },
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -171,7 +194,7 @@ class UsertypePage extends StatelessWidget {
                         Column(
                           children: [
                             Text(
-                              'I am a Company',
+                              'I am a Business',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 22,
